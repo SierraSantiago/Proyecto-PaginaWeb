@@ -73,16 +73,6 @@ body, ul, li, p, a, label, input, div {
 #templatemo_main_nav a { color: #212934;}
 #templatemo_main_nav a:hover { color: #18344a;}
 #templatemo_main_nav .navbar .nav-icon { margin-right: 20px;}
-#suggestions-container {
-  position: relative; /* Para controlar la posición relativa al campo de búsqueda */
-  top: 10px; /* Ajusta la distancia desde el campo de búsqueda */
-  max-height: 150px; /* Limita la altura máxima de las sugerencias para desplazamiento */
-  overflow-y: auto; /* Agrega una barra de desplazamiento vertical si es necesario */
-  background-color: #ffffff; /* Fondo blanco para el contenedor de sugerencias */
-  border: 1px solid #ccc; /* Borde alrededor del contenedor */
-  border-top: none; /* Elimina el borde superior para que parezca parte del campo de búsqueda */
-  z-index: 999; /* Asegura que las sugerencias estén por encima del resto del contenido */
-}
 
 /* Hero Carousel */
 #template-mo-zay-hero-carousel { background:  #e3e3e4  !important;}

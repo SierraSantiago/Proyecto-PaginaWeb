@@ -20,7 +20,11 @@ module.exports=(sequelize,DataTypes)=>{
         },
         categorieId:{
             type: DataTypes.INTEGER
+        },
+        details:{
+            type: DataTypes.STRING
         }
+
     }
     ,
     {
