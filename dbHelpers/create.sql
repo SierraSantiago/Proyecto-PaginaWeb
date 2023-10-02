@@ -29,6 +29,16 @@ CREATE TABLE `products` (
    `image` VARCHAR(255) NOT NULL,
    `price` DECIMAL(10,0) NOT NULL,
    `categorieId` INT NOT NULL,
+   `details`  VARCHAR(255) NOT NULL,
    PRIMARY KEY (`idProduct`),
    FOREIGN KEY (`categorieId`) REFERENCES `categories`(`idCategorie`)
+);
+CREATE TABLE `images` (
+   `idImage` INT AUTO_INCREMENT,
+   
+   `image` VARCHAR(255) NOT NULL,
+   
+   `productoId` INT NOT NULL,
+   PRIMARY KEY (`idImage`),
+   FOREIGN KEY (`productoId`) REFERENCES `products`(`idProduct`)
 );
