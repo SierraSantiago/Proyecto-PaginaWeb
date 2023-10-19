@@ -162,6 +162,29 @@ const controller = {
 			})
 			
 		},
+		favorites: (req, res) => {
+			
+			
+			
+			db.products.findAll({
+				where:  {
+					favorite: 1
+				  }
+        	})
+			.then((products)=>{
+				const htmlPath=path.resolve(__dirname,rutaAbsoluta+'catalogue');
+				console.log(products);
+				res.render(htmlPath, {
+					products,
+					//user:req.session.userLogged
+			})
+		 })
+		 	.catch(error => {
+				res.send(error)
+				console.log("Error ");
+			})
+			
+		},
 	}
 ;
 
