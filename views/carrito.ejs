@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/templatemo.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="stylesheet" href="/css/favoritos.css">
+    <link rel="stylesheet" href="/css/carritoCompras.css">
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet"
@@ -67,21 +67,16 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="home">Home</a>
-                        </li>
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="catalogue">Shop</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="favorites">Favorites</a>
+                            <a class="nav-link" href="about.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about">About</a>
+                            <a class="nav-link" href="shop.html">Shop</a>
                         </li>
-                        
                         <li class="nav-item">
-                            <a class="nav-link" href="contact">Contact</a>
+                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -135,31 +130,32 @@
 
 
     <!-- Start Content -->
-    <!-- Favorites Page Content -->
-<div class="container mt-4">
-    <h1 class="text-center">My Favorites</h1>
-    <div class="row">
-        <% products.forEach(function(producto) { %>
-        <!-- Product 1 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="product">
-                <img src="<%= producto.image%>" class="img-fluid border" alt="<%= producto.name%>" > 
-                <h3><%= producto.name%> 1</h3>
-                <p>Price:$<%= producto.price%>
-                <a href="/favorite/<%= producto.idProduct%>"class="btn btn-danger">Remove from Favorites</a>
-            </div>
-
+    <div class="container mt-4">
+        <h1 class="text-center">My Cart</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Size</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Product rows will be added here using JavaScript -->
+            </tbody>
+        </table>
+        <div id="cart-summary">
+            <p>Total Price: $<span id="total-price">0.00</span></p>
+            <button class="btn btn-primary" id="buy-button">Buy All</button>
         </div>
-        <% }); %>
-        
-        <!-- Add more products here -->
     </div>
-</div>
+    
 
 
-
-    <!-- Start Footer -->
-    <footer class="bg-dark" id="tempaltemo_footer">
+     <!-- Start Footer -->
+     <footer class="bg-dark" id="tempaltemo_footer">
         <div class="container">
             <div class="row">
 
@@ -247,7 +243,7 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/templatemo.js"></script>
     <script src="/js/custom.js"></script>
-    <script src="/js/favoritos.js"></script>
+    <script src="/js/carrito.js"></script>
     <!-- End Script -->
 </body>
 
