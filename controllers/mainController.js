@@ -11,10 +11,10 @@ const controller = {
 			
 			
 			db.products.findAll({
-				include: ['categories']
+				limit: 3
         	})
 			.then((products)=>{
-				const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home');
+				const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home1');
 				console.log(products);
 				res.render(htmlPath, {
 					products,
@@ -29,7 +29,7 @@ const controller = {
 		},
 
 		about:(req,res)=>{
-			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'about');
+			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'about1');
 			res.render(htmlPath);
 		},
 
@@ -54,11 +54,11 @@ const controller = {
 		},
 
 		contact: (req,res)=>{
-			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'contact');
+			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'contact1');
 			res.render(htmlPath);
 		},
 		login:(req,res)=>{
-			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'login');
+			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'login1');
 			res.render(htmlPath, {errors:{msg:null}});
 		},
 		save: (req, res) => {
@@ -100,7 +100,7 @@ const controller = {
 				}
 			}).then((user) => {
 				console.log(user);
-				const htmlPath = path.resolve(__dirname, rutaAbsoluta + 'login');
+				const htmlPath = path.resolve(__dirname, rutaAbsoluta + 'login1');
 				if (user != null) {
 					if (bcrypt.compareSync(password,user.password)) {
 						console.log('Todo correcto puede seguir :D');
@@ -131,7 +131,7 @@ const controller = {
 	
 		},
 		detail : (req,res)=>{
-			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'shop');
+			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'shop1');
 			let id = req.params.id
 			db.products.findByPk(id)
 			.then((producto)=>{
@@ -149,12 +149,66 @@ const controller = {
 				include: ['categories']
         	})
 			.then((products)=>{
-				const htmlPath=path.resolve(__dirname,rutaAbsoluta+'catalogue');
+				const htmlPath=path.resolve(__dirname,rutaAbsoluta+'catalogue1');
 				console.log(products);
 				res.render(htmlPath, {
 					products,
 					//user:req.session.userLogged
 			})
+		 })
+		 	.catch(error => {
+				res.send(error)
+				console.log("Error ");
+			})
+			
+		},
+		favorites: (req, res) => {
+			
+			
+			
+			db.products.findAll({
+				where:  {
+					favorito: 1
+				  }
+        	})
+			.then((products)=>{
+				const htmlPath=path.resolve(__dirname,rutaAbsoluta+'favoritos');
+				console.log(products);
+				res.render(htmlPath, {
+					products,
+					//user:req.session.userLogged
+			})
+		 })
+		 	.catch(error => {
+				res.send(error)
+				console.log("Error ");
+			})
+			
+		},
+		
+		isFavorite: (req, res) => {
+
+			let id = req.params.id;
+			db.products.update({
+				favorito:1 
+			},
+			{where:{idProduct:id} }).then(()=>{
+				return res.redirect('/catalogue')
+		 })
+		 	.catch(error => {
+				res.send(error)
+				console.log("Error ");
+			})
+			
+		},
+		notFavorite: (req, res) => {
+
+			let id = req.params.id;
+			db.products.update({
+				favorito:0
+			},
+			{where:{idProduct:id} }).then(()=>{
+				return res.redirect('/favorites')
 		 })
 		 	.catch(error => {
 				res.send(error)

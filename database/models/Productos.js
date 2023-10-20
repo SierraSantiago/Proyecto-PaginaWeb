@@ -23,7 +23,11 @@ module.exports=(sequelize,DataTypes)=>{
         },
         details:{
             type: DataTypes.STRING
+        },
+        favorito:{
+            type: DataTypes.INTEGER
         }
+
 
     }
     ,

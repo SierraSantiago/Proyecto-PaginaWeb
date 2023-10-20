@@ -12,6 +12,9 @@ router.get("/agregar",mainController.index);
 router.post("/login",mainController.login2);
 router.get('/detail/:id',mainController.detail);
 router.get('/catalogue',mainController.catalogue);
+router.get('/favorites',mainController.favorites);
+router.get('/catalogue/:id',mainController.isFavorite);
+router.get('/favorite/:id',mainController.notFavorite);
 /*
 router.get('/carrito',mainController.carrito);
 router.get('/ayuda',mainController.ayuda);
