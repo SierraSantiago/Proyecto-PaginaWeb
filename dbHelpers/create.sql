@@ -22,6 +22,11 @@ CREATE TABLE `categories` (
    `name` VARCHAR(255) NOT NULL,
    PRIMARY KEY (`idCategorie`)
 );
+/*CREATE TABLE `sizes` (
+   `idSize` INT AUTO_INCREMENT,
+   `name` VARCHAR(255) NOT NULL,
+   PRIMARY KEY (`idSize`)
+);*/
 CREATE TABLE `products` (
    `idProduct` INT AUTO_INCREMENT,
    `name` VARCHAR(255) NOT NULL,
@@ -32,6 +37,7 @@ CREATE TABLE `products` (
    `details`  VARCHAR(255) NOT NULL,
    PRIMARY KEY (`idProduct`),
    FOREIGN KEY (`categorieId`) REFERENCES `categories`(`idCategorie`)
+   /*FOREIGN KEY (`SizeId`) REFERENCES `sizes`(`idSize`)*/
 );
 CREATE TABLE `images` (
    `idImage` INT AUTO_INCREMENT,

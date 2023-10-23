@@ -26,6 +26,9 @@ module.exports=(sequelize,DataTypes)=>{
         },
         favorito:{
             type: DataTypes.INTEGER
+        },
+        carrito:{
+            type: DataTypes.INTEGER
         }
 
 

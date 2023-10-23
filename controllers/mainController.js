@@ -216,6 +216,60 @@ const controller = {
 			})
 			
 		},
+		enCarrito: (req, res) => {
+			
+			
+			
+			db.products.findAll({
+				where:  {
+					carrito:1
+				  }
+        	})
+			.then((products)=>{
+				const htmlPath=path.resolve(__dirname,rutaAbsoluta+'carrito');
+				console.log(products);
+				res.render(htmlPath, {
+					products,
+					//user:req.session.userLogged
+			})
+		 })
+		 	.catch(error => {
+				res.send(error)
+				console.log("Error ");
+			})
+			
+		},
+		isCarrito: (req, res) => {
+
+			let id = req.params.id;
+			console.log("Entra a en carrito",id);	
+			db.products.update({
+				carrito:1 
+			},
+			{where:{idProduct:id} }).then(()=>{
+				return res.redirect('/catalogue')
+		 })
+		 	.catch(error => {
+				res.send(error)
+				console.log("Error ");
+			})
+			
+		},
+		notCarrito: (req, res) => {
+
+			let id = req.params.id;
+			db.products.update({
+				carrito:0
+			},
+			{where:{idProduct:id} }).then(()=>{
+				return res.redirect('/catalogue')
+		 })
+		 	.catch(error => {
+				res.send(error)
+				console.log("Error ");
+			})
+			
+		},
 	}
 ;
 

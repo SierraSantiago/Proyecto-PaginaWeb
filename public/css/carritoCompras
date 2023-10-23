@@ -1,0 +1,53 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+
+/* Tabla de carrito */
+table {
+    width: 100%;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Botones */
+.btn {
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #18344a;
+    color: #fff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* Resumen del carrito */
+#cart-summary {
+    text-align: right;
+    margin-top: 20px;
+}
+
+#total-price {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Enlaces */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

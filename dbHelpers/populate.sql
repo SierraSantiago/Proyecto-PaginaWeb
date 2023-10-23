@@ -15,6 +15,9 @@ INSERT INTO `rols` (idRol, roleType) VALUES
 INSERT INTO `categories` (idCategorie, name) VALUES
 (default, "leggins"), (default, "top"), (default, "biker");
 
+/*INSERT INTO `sizes` (idSize, name) VALUES
+(default, "S"), (default, "M"), (default, "L"), (default, "XL");*/
+
 
 INSERT INTO `products` (idProduct, name, description, image, price, categorieId) VALUES
 (default, "Top deportivo", "color rojo", "archivo.png", 25000, 2),

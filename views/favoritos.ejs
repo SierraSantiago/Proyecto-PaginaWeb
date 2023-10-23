@@ -96,12 +96,12 @@
                         </div>
                     </div>
 
-                    <a class="nav-icon position-relative text-decoration-none" href="carrito.html">
+                    <a class="nav-icon position-relative text-decoration-none" href="carrito">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="perfil.html">
+                    <a class="nav-icon position-relative text-decoration-none" href="perfil">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
@@ -145,7 +145,7 @@
             <div class="product">
                 <img src="<%= producto.image%>" class="img-fluid border" alt="<%= producto.name%>" > 
                 <h3><%= producto.name%> 1</h3>
-                <p>Price:$<%= producto.price%>
+                <p>Price:$<%= producto.price%></p>
                 <a href="/favorite/<%= producto.idProduct%>"class="btn btn-danger">Remove from Favorites</a>
             </div>
 
@@ -194,9 +194,23 @@
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="text-decoration-none" href="#">Home</a></li>
-                        <li><a class="text-decoration-none" href="about.html">About Us</a></li>
-                        <li><a class="text-decoration-none" href="contact.html">Contact</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="home">Home</a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="catalogue">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="favorites">Favorites</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about">About</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact">Contact</a>
+                        </li>
                     </ul>
                 </div>
 

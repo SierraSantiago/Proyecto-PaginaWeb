@@ -67,16 +67,21 @@
                 <div class="flex-fill">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="home">Home</a>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="catalogue">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
+                            <a class="nav-link" href="favorites">Favorites</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop.html">Shop</a>
+                            <a class="nav-link" href="about">About</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -131,12 +136,14 @@
 
     <!-- Start Content -->
     <div class="container mt-4">
+       
         <h1 class="text-center">My Cart</h1>
         <table class="table">
+            <% products.forEach(function(producto) { %>
             <thead>
                 <tr>
-                    <th>Product</th>
-                    <th>Price</th>
+                    <th><%= producto.name%></th>
+                    <th><%= producto.price%></th>
                     <th>Size</th>
                     <th>Quantity</th>
                     <th>Action</th>
@@ -145,11 +152,15 @@
             <tbody>
                 <!-- Product rows will be added here using JavaScript -->
             </tbody>
+            <% }); %>
         </table>
         <div id="cart-summary">
+            
             <p>Total Price: $<span id="total-price">0.00</span></p>
             <button class="btn btn-primary" id="buy-button">Buy All</button>
+            
         </div>
+        
     </div>
     
 
