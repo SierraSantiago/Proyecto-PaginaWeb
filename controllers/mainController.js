@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const rutaAbsoluta='../views/';
 const bcrypt=require('bcrypt');
+const { Sequelize, DataTypes } = require('sequelize');
 let db = require('../database/models');
 
 const controller = {
@@ -134,9 +135,9 @@ const controller = {
 			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'shop1');
 			let id = req.params.id
 			db.products.findByPk(id)
-			.then((producto)=>{
-				console.log(producto)
-				res.render(htmlPath, {producto
+			.then((products)=>{
+				console.log(products)
+				res.render(htmlPath, {products
 					})
 			 })
 			 .catch(error => res.send(error))
@@ -216,7 +217,7 @@ const controller = {
 			})
 			
 		},
-		enCarrito: (req, res) => {
+		enCarrito: async (req, res) => {
 			
 			
 			
@@ -226,10 +227,11 @@ const controller = {
 				  }
         	})
 			.then((products)=>{
+				const sumaPrecios = products.reduce((total, product) => total + parseFloat(product.price) , 0);
 				const htmlPath=path.resolve(__dirname,rutaAbsoluta+'carrito');
 				console.log(products);
 				res.render(htmlPath, {
-					products,
+					products, sumaPrecios
 					//user:req.session.userLogged
 			})
 		 })
@@ -260,6 +262,23 @@ const controller = {
 			let id = req.params.id;
 			db.products.update({
 				carrito:0
+			},
+			{where:{idProduct:id} }).then(()=>{
+				return res.redirect('/catalogue')
+		 })
+		 	.catch(error => {
+				res.send(error)
+				console.log("Error ");
+			})
+			
+		},
+		editSize: (req, res) => {
+
+			let id = req.params.id;
+			let size= req.params.size;
+			console.log(id, size)
+			db.products.update({
+				size:size
 			},
 			{where:{idProduct:id} }).then(()=>{
 				return res.redirect('/catalogue')

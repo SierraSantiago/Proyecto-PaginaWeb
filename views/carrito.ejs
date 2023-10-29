@@ -139,24 +139,34 @@
        
         <h1 class="text-center">My Cart</h1>
         <table class="table">
-            <% products.forEach(function(producto) { %>
+          
             <thead>
                 <tr>
-                    <th><%= producto.name%></th>
-                    <th><%= producto.price%></th>
-                    <th>Size</th>
-                    <th>Quantity</th>
-                    <th>Action</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    
                 </tr>
             </thead>
             <tbody>
+                <% products.forEach(function(producto) { %>
+                    <tr>
+                        <td>
+                            <%= producto.name%>
+                        </td>
+                        <td>
+                            <%= producto.price%>
+
+                        </td>
+                    </tr>
                 <!-- Product rows will be added here using JavaScript -->
+                <% }); %>
+
             </tbody>
-            <% }); %>
+            
         </table>
         <div id="cart-summary">
             
-            <p>Total Price: $<span id="total-price">0.00</span></p>
+            <p>Total Price: $<span id="total-price"><%= sumaPrecios%></span></p>
             <button class="btn btn-primary" id="buy-button">Buy All</button>
             
         </div>
