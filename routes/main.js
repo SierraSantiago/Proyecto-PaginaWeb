@@ -19,6 +19,15 @@ router.get('/carrito',mainController.enCarrito);
 router.get('/carrito/:id',mainController.isCarrito);
 router.get('/carrito/:id/:size',mainController.editSize);
 router.get('/perfil',mainController.perfil);
+router.get('/agregarProducto',mainController.agregarProducto);
+router.get('/comprar',mainController.comprar);
+router.get('/ocean',mainController.azul);
+router.get('/leggin',mainController.leggin);
+router.get('/biker',mainController.biker);
+router.get('/top',mainController.top);
+router.get('/merlot',mainController.rojo);
+router.get('/preto',mainController.negro);
+router.get('/jaspe',mainController.gris);
 /*
 router.get('/carrito',mainController.carrito);
 router.get('/ayuda',mainController.ayuda);

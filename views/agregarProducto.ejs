@@ -12,12 +12,11 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/templatemo.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="stylesheet" href="/css/carritoCompras.css">
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/fontawesome.min.css">
 
 </head>
 
@@ -52,7 +51,7 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="home">
                 So Active
             </a>
 
@@ -69,17 +68,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="home">Home</a>
                         </li>
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="catalogue">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="favorites">Favorites</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about">About</a>
                         </li>
-                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop">Shop</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact">Contact</a>
                         </li>
@@ -115,75 +109,100 @@
 
 
 
-    <!-- Modal -->
-    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="w-100 pt-1 mb-5 text-right">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="" method="get" class="modal-content modal-body border-0 p-0">
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
-                    <button type="submit" class="input-group-text bg-success text-light">
-                        <i class="fa fa-fw fa-search text-white"></i>
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
 
+        .container {
+            text-align: center;
+        }
+        table {
+            margin: 0 auto;
+        }
 
-    <!-- Start Content -->
-    <div class="container mt-4">
-       
-        <h1 class="text-center">My Cart</h1>
-        <table class="table">
-          
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Size</th>
+        table td {
+            padding: 10px;
+        }
 
-                    
-                </tr>
-            </thead>
-            <tbody>
-                <% products.forEach(function(producto) { %>
-                    <tr>
-                        <td>
-                            <%= producto.name%>
-                        </td>
-                        <td>
-                            <%= producto.price%>
-
-                        </td>
-                        <td>
-                            <%= producto.size%>
-
-                        </td>
-
-                    </tr>
-                <!-- Product rows will be added here using JavaScript -->
-                <% }); %>
-
-            </tbody>
-            
-        </table>
-        <div id="cart-summary">
-            
-            <p>Total Price: $<span id="total-price"><%= sumaPrecios%></span></p>
-            <button class="btn btn-primary" id="buy-button" href="comprar">Buy All </button>
-            
-        </div>
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Product</h1>
         
+        <form method="post" action= "/agregarProducto"> 
+            <table>
+                <tr>
+                    <td>Title:</td>
+                    <td><input type="text" name="title"></td>
+                </tr>
+                <tr>
+                    <td>Price:</td>
+                    <td><input type="number" name="price"></td>
+                </tr>
+                <tr>
+                    <td>Brand:</td>
+                    <td><input type="text" name="brand"></td>
+                </tr>
+                <tr>
+                    <td>Description:</td>
+                    <td><textarea name="description" rows="4" cols="50"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Available Color:</td>
+                    <td>
+                        <input type="text" name="color1" placeholder="Color 1"><br>
+                        <input type="text" name="color2" placeholder="Color 2"><br>
+                        <input type="text" name="color3" placeholder="Color 3"><br>
+                        <input type="text" name="color4" placeholder="Color 4">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Specifications:</td>
+                    <td><textarea name="specifications" rows="4" cols="50"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Size:</td>
+                    <td>
+                        <input type="text" name="size1" placeholder="size 1"><br>
+                        <input type="text" name="size2" placeholder="size 2"><br>
+                        <input type="text" name="size3" placeholder="size 3"><br>
+                        <input type="text" name="size4" placeholder="size 4">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Upload Photos:</td>
+                    <td>
+                        <input type="file" name="photo1" accept="image/*"><br>
+                        <input type="file" name="photo2" accept="image/*"><br>
+                        <input type="file" name="photo3" accept="image/*">
+                    </td>
+                </tr>
+            </table>
+
+            <input type="submit" value="Enviar">
+        </form>
     </div>
-    
+</body>
+</html>
 
 
-     <!-- Start Footer -->
-     <footer class="bg-dark" id="tempaltemo_footer">
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
         <div class="container">
             <div class="row">
 
@@ -219,8 +238,8 @@
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><a class="text-decoration-none" href="#">Home</a></li>
-                        <li><a class="text-decoration-none" href="about.html">About Us</a></li>
-                        <li><a class="text-decoration-none" href="contact.html">Contact</a></li>
+                        <li><a class="text-decoration-none" href="about">About Us</a></li>
+                        <li><a class="text-decoration-none" href="contact">Contact</a></li>
                     </ul>
                 </div>
 
@@ -271,7 +290,6 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/templatemo.js"></script>
     <script src="/js/custom.js"></script>
-    <script src="/js/carrito.js"></script>
     <!-- End Script -->
 </body>
 

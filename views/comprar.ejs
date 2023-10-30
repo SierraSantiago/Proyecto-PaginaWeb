@@ -12,12 +12,14 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/templatemo.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="stylesheet" href="/css/carritoCompras.css">
+    <link rel="stylesheet" href="/css/comprar.css">
+    
+
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/fontawesome.min.css">
 
 </head>
 
@@ -52,7 +54,7 @@
     <nav class="navbar navbar-expand-lg navbar-light shadow">
         <div class="container d-flex justify-content-between align-items-center">
 
-            <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="home">
                 So Active
             </a>
 
@@ -69,17 +71,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="home">Home</a>
                         </li>
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="catalogue">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="favorites">Favorites</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="about">About</a>
                         </li>
-                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="catalogue">Shop</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact">Contact</a>
                         </li>
@@ -115,75 +112,70 @@
 
 
 
-    <!-- Modal -->
-    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="w-100 pt-1 mb-5 text-right">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="" method="get" class="modal-content modal-body border-0 p-0">
-                <div class="input-group mb-2">
-                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
-                    <button type="submit" class="input-group-text bg-success text-light">
-                        <i class="fa fa-fw fa-search text-white"></i>
-                    </button>
+
+    <!-- Start Content Page -->
+<div class="container mt-5">
+    <h1>Checkout</h1>
+    <form action="procesar_pago.php" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Shipment information:</h2>
+                <div class="form-group">
+                    <label for="telefono">Phone number:</label>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" required pattern="[0-9]+" title="Ingresa solo números">
                 </div>
-            </form>
-        </div>
-    </div>
-
-
-    <!-- Start Content -->
-    <div class="container mt-4">
-       
-        <h1 class="text-center">My Cart</h1>
-        <table class="table">
-          
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Size</th>
-
-                    
-                </tr>
-            </thead>
-            <tbody>
-                <% products.forEach(function(producto) { %>
-                    <tr>
-                        <td>
-                            <%= producto.name%>
-                        </td>
-                        <td>
-                            <%= producto.price%>
-
-                        </td>
-                        <td>
-                            <%= producto.size%>
-
-                        </td>
-
-                    </tr>
-                <!-- Product rows will be added here using JavaScript -->
-                <% }); %>
-
-            </tbody>
-            
-        </table>
-        <div id="cart-summary">
-            
-            <p>Total Price: $<span id="total-price"><%= sumaPrecios%></span></p>
-            <button class="btn btn-primary" id="buy-button" href="comprar">Buy All </button>
+                <div class="form-group">
+                    <label for="direccion">Shipping Address:</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" required>
+                </div>
+                <div class="form-group">
+                    <label for="ciudad">City:</label>
+                    <input type="text" class="form-control" id="ciudad" name="ciudad" required>
+                </div>
+                <div class="form-group">
+                    <label for="codigo_postal">Postal Code:</label>
+                    <input type="text" class="form-control" id="codigo_postal" name="codigo_postal" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2>Payment method:</h2>
+                <div class="form-group">
+                    <label for="metodo_pago">Choose a payment method:</label>
+                    <select class="form-control" id="metodo_pago" name="metodo_pago">
+                        <option value="tarjeta_credito">Credit card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="transferencia">Wire transfer</option>
+                    </select>
+                </div>
+                <!-- Credit Card Number -->
+                <div class="form-group">
+                    <label for="credit_card">Credit Card Number:</label>
+                    <input type="text" class="form-control" id="credit_card" name="credit_card" required>
+                </div>
+                <!-- Expiration Date (MM/YY) -->
+                <div class="form-group">
+                    <label for="expiration_date">Expiration Date (MM/YY):</label>
+                    <input type="text" class="form-control" id="expiration_date" name="expiration_date" required>
+                </div>
+                <!-- CVV (Card Verification Value) -->
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" class="form-control" id="cvv" name="cvv" required>
+                </div>
+            </div>
             
         </div>
-        
-    </div>
-    
+        <button type="submit" class="btn btn-primary">Make an order</button>
+    </form>
+</div>
+<!-- End Content Page -->
 
 
-     <!-- Start Footer -->
-     <footer class="bg-dark" id="tempaltemo_footer">
+
+
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
         <div class="container">
             <div class="row">
 
@@ -219,8 +211,8 @@
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                         <li><a class="text-decoration-none" href="#">Home</a></li>
-                        <li><a class="text-decoration-none" href="about.html">About Us</a></li>
-                        <li><a class="text-decoration-none" href="contact.html">Contact</a></li>
+                        <li><a class="text-decoration-none" href="about">About Us</a></li>
+                        <li><a class="text-decoration-none" href="contact">Contact</a></li>
                     </ul>
                 </div>
 
@@ -263,7 +255,6 @@
 
     </footer>
     <!-- End Footer -->
-    <!-- End Footer -->
 
     <!-- Start Script -->
     <script src="/js/jquery-1.11.0.min.js"></script>
@@ -271,7 +262,6 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/templatemo.js"></script>
     <script src="/js/custom.js"></script>
-    <script src="/js/carrito.js"></script>
     <!-- End Script -->
 </body>
 

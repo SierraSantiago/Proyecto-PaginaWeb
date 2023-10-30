@@ -293,6 +293,206 @@ const controller = {
 			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'perfil');
 			res.render(htmlPath);
 		},
+		agregarProducto: (req,res)=>{
+			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregarProducto');
+			res.render(htmlPath);
+		},
+
+		processCreate: function (req, res) {
+			let image;
+			if(req.files[0] != undefined){
+				image = '/img/imgHome/'+req.files[0].filename
+			} else {
+				image = productToEdit.image
+			}
+			console.log(image);
+			db.products.create({
+				
+				name: req.body.name,
+				description: req.body.description,
+				image: image,
+				price: req.body.price, 
+				categorieId: req.body.idCategoria,
+				description:req.body.descripcion,
+				categorieId:req.body.idCategoria
+			})
+		.then((productos)=>{
+		   return res.redirect('/productos')
+		})
+		.catch(error => res.send(error)) 
+	   },
+	   comprar: (req,res)=>{
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'comprar');
+		res.render(htmlPath);
+	},
+	azul: (req, res) => {
+			
+			
+			
+		db.products.findAll({
+			where:  {
+				color: "blue"
+				
+			  }
+		})
+		.then((products)=>{
+			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'color');
+			console.log(products);
+			res.render(htmlPath, {
+				products,
+				//user:req.session.userLogged
+		})
+	 })
+		 .catch(error => {
+			res.send(error)
+			console.log("Error ");
+		})
+		
+	},
+	rojo: (req, res) => {
+			
+			
+			
+		db.products.findAll({
+			where:  {
+				color: "red"
+				
+			  }
+		})
+		.then((products)=>{
+			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'color');
+			console.log(products);
+			res.render(htmlPath, {
+				products,
+				//user:req.session.userLogged
+		})
+	 })
+		 .catch(error => {
+			res.send(error)
+			console.log("Error ");
+		})
+		
+	},
+	negro: (req, res) => {
+			
+			
+			
+		db.products.findAll({
+			where:  {
+				color: "black"
+				
+			  }
+		})
+		.then((products)=>{
+			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'color');
+			console.log(products);
+			res.render(htmlPath, {
+				products,
+				//user:req.session.userLogged
+		})
+	 })
+		 .catch(error => {
+			res.send(error)
+			console.log("Error ");
+		})
+		
+	},
+	gris: (req, res) => {
+			
+			
+			
+		db.products.findAll({
+			where:  {
+				color: "grey"
+				
+			  }
+		})
+		.then((products)=>{
+			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'color');
+			console.log(products);
+			res.render(htmlPath, {
+				products,
+				//user:req.session.userLogged
+		})
+	 })
+		 .catch(error => {
+			res.send(error)
+			console.log("Error ");
+		})
+		
+	},
+	leggin: (req, res) => {
+			
+			
+			
+		db.products.findAll({
+			where:  {
+				categorieId: 1
+				
+			  }
+		})
+		.then((products)=>{
+			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'color');
+			console.log(products);
+			res.render(htmlPath, {
+				products,
+				//user:req.session.userLogged
+		})
+	 })
+		 .catch(error => {
+			res.send(error)
+			console.log("Error ");
+		})
+		
+	},
+	biker: (req, res) => {
+			
+			
+			
+		db.products.findAll({
+			where:  {
+				categorieId: 3
+				
+			  }
+		})
+		.then((products)=>{
+			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'color');
+			console.log(products);
+			res.render(htmlPath, {
+				products,
+				//user:req.session.userLogged
+		})
+	 })
+		 .catch(error => {
+			res.send(error)
+			console.log("Error ");
+		})
+		
+	},
+	top: (req, res) => {
+			
+			
+			
+		db.products.findAll({
+			where:  {
+				categorieId: 2
+				
+			  }
+		})
+		.then((products)=>{
+			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'color');
+			console.log(products);
+			res.render(htmlPath, {
+				products,
+				//user:req.session.userLogged
+		})
+	 })
+		 .catch(error => {
+			res.send(error)
+			console.log("Error ");
+		})
+		
+	},
 	}
 ;
 

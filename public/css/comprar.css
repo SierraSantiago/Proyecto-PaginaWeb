@@ -1,0 +1,39 @@
+/* Add this CSS to your custom.css file or in a <style> tag in your HTML document */
+
+
+/* Style for the form headings (Shipment information and Payment method) */
+h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* Style for form labels */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Style for form input fields */
+input[type="text"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the "Make an order" button */
+button[type="submit"] {
+    background-color: #18344a;;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
