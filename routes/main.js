@@ -18,6 +18,7 @@ router.get('/favorite/:id',mainController.notFavorite);
 router.get('/carrito',mainController.enCarrito);
 router.get('/carrito/:id',mainController.isCarrito);
 router.get('/carrito/:id/:size',mainController.editSize);
+router.get('/perfil',mainController.perfil);
 /*
 router.get('/carrito',mainController.carrito);
 router.get('/ayuda',mainController.ayuda);

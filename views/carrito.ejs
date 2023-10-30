@@ -96,12 +96,12 @@
                         </div>
                     </div>
 
-                    <a class="nav-icon position-relative text-decoration-none" href="carrito.html">
+                    <a class="nav-icon position-relative text-decoration-none" href="carrito">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                         <span
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="perfil.html">
+                    <a class="nav-icon position-relative text-decoration-none" href="perfil">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
                         <span
                             class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
@@ -144,6 +144,8 @@
                 <tr>
                     <th>Product</th>
                     <th>Price</th>
+                    <th>Price</th>
+
                     
                 </tr>
             </thead>
@@ -157,6 +159,11 @@
                             <%= producto.price%>
 
                         </td>
+                        <td>
+                            <%= producto.size%>
+
+                        </td>
+
                     </tr>
                 <!-- Product rows will be added here using JavaScript -->
                 <% }); %>

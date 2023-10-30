@@ -289,6 +289,10 @@ const controller = {
 			})
 			
 		},
+		perfil: (req,res)=>{
+			const htmlPath=path.resolve(__dirname,rutaAbsoluta+'perfil');
+			res.render(htmlPath);
+		},
 	}
 ;
 

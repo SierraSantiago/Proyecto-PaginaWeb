@@ -1,0 +1,71 @@
+/* Estilo para el cuerpo de la página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el encabezado del sitio */
+
+
+.navbar-brand {
+    font-size: 24px;
+}
+
+.nav-link {
+    color: #fff;
+}
+
+/* Estilo para la barra de navegación superior */
+#templatemo_nav_top {
+    background-color: #111;
+}
+
+.navbar-sm-brand {
+    font-size: 14px;
+}
+
+/* Estilo para los enlaces de redes sociales */
+.navbar a {
+    text-decoration: none;
+    margin: 0 10px;
+    color: #fff;
+    font-size: 20px;
+}
+
+
+
+/* Estilo para los títulos de sección */
+
+
+/* Estilo para las tarjetas de producto en la página de inicio */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+/* Estilo para los botones */
+.btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}

@@ -306,16 +306,23 @@ https://templatemo.com/tm-559-zay-shop
                                             <li class="list-inline-item">Size:
                                                 <input type="hidden" name="product-size" id="product-size" value="S">
                                             </li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size" > <a href="/carrito/<%= products.idProduct %>/S">S</a></span>
+                                            <li class="list-inline-item">
+                                                 <a href="/carrito/<%= products.idProduct %>/S">S</span></a>
                                             </li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size"> <a href="/carrito/<%= products.idProduct %>/M">M</a></span>
-                                            </li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size"> <a href="/carrito/<%= products.idProduct %>/L">L</a></span>
+                                            <li class="list-inline-item"> 
+                                                <a href="/carrito/<%= products.idProduct %>/M"> M</span></a>
                                             </li>
                                             <li class="list-inline-item">
-                                                     <a href="/carrito/<%= products.idProduct %>/" class="btn btn-success btn-size">XL</a></li>
+                                                 <a href="/carrito/<%= products.idProduct %>/L">L</a>
+                                            </li>
+                                            
+                                            <li class="list-inline-item">
+                                                <a href="/carrito/<%= products.idProduct %>/XL">XL</span></a>
+                                            </li>
+                                                     
                                         </ul>
                                     </div>
+                                    
                                     <div class="col-auto">
                                         <ul class="list-inline pb-3">
                                             <li class="list-inline-item text-right">
@@ -339,8 +346,8 @@ https://templatemo.com/tm-559-zay-shop
                                             value="buy">Buy</button>
                                     </div>
                                     <div class="col d-grid">
-                                        <button type="submit" class="btn btn-success btn-lg" href="/carrito/<%= products.idProduct %>"
-                                            value="addtocard">Add to cart</button>
+                                        <li><a class="btn btn-success text-white mt-2" href="/carrito/<%= products.idProduct %>"><i
+                                            class="fas fa-cart-plus"></i></a></li>
                                     </div>
                                 </div>
                             </form>
