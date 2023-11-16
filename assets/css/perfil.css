@@ -1,71 +1,139 @@
-/* Estilo para el cuerpo de la página */
+/* perfil.css */
+
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
     margin: 0;
     padding: 0;
 }
 
-/* Estilo para el encabezado del sitio */
-
-
-.navbar-brand {
-    font-size: 24px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.nav-link {
+/* Estilos para el encabezado */
+h1 {
+    color: #18344a;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Estilos para la información del usuario */
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-md-6 {
+    width: 48%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Estilos para los enlaces de la cuenta */
+h2 {
+    color: #18344a;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+ul a:hover {
+    background-color: #007bff;
     color: #fff;
 }
+/* tarjeta.css */
 
-/* Estilo para la barra de navegación superior */
-#templatemo_nav_top {
-    background-color: #111;
+.credit-card-info {
+    margin-top: 20px;
 }
 
-.navbar-sm-brand {
-    font-size: 14px;
+.credit-card-info h2 {
+    color: #18344a;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Estilo para los enlaces de redes sociales */
-.navbar a {
-    text-decoration: none;
-    margin: 0 10px;
-    color: #fff;
-    font-size: 20px;
+.credit-card-info .info-box {
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    margin-bottom: 20px;
 }
 
-
-
-/* Estilo para los títulos de sección */
-
-
-/* Estilo para las tarjetas de producto en la página de inicio */
-.card {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 10px 0;
-    transition: transform 0.3s;
+.credit-card-info ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.card:hover {
-    transform: scale(1.05);
+.credit-card-info ul li {
+    margin-bottom: 10px;
+}
+/* cambio-contrasena.css */
+
+.password-change {
+    margin-top: 20px;
+    text-align: center;
 }
 
-.card-title {
-    font-weight: bold;
+.password-change h2 {
+    color: #28a745;
+    margin-bottom: 20px;
 }
 
-/* Estilo para los botones */
-.btn {
-    background-color: #4CAF50;
-    color: #fff;
+.change-password-link {
+    display: inline-block;
     padding: 10px 20px;
-    border: none;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.btn:hover {
-    background-color: #45a049;
+.change-password-link:hover {
+    background-color: #0056b3;
 }
+
+/* cambio-contrasena.css */
+
+.password-change {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.password-change h2 {
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+.change-password-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.change-password-link:hover {
+    background-color: #0056b3;
+}
+
