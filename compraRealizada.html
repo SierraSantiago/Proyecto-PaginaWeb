@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <link rel="stylesheet" href="assets/css/custom.css">
-    <link rel="stylesheet" href="assets/css/comprar.css">
-    
-
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet"
@@ -112,65 +109,45 @@
 
 
 
-
-    <!-- Start Content Page -->
-<div class="container mt-5">
-    <h1>Checkout</h1>
-    <form id="checkoutForm">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Shipment information:</h2>
-                <div class="form-group">
-                    <label for="telefono">Phone number:</label>
-                    <input type="tel" class="form-control" id="telefono" name="telefono" required pattern="[0-9]+" title="Ingresa solo números">
-                </div>
-                <div class="form-group">
-                    <label for="direccion">Shipping Address:</label>
-                    <input type="text" class="form-control" id="direccion" name="direccion" required>
-                </div>
-                <div class="form-group">
-                    <label for="ciudad">City:</label>
-                    <input type="text" class="form-control" id="ciudad" name="ciudad" required>
-                </div>
-                <div class="form-group">
-                    <label for="codigo_postal">Postal Code:</label>
-                    <input type="text" class="form-control" id="codigo_postal" name="codigo_postal" required>
-                </div>
+    <!-- Modal -->
+    <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="w-100 pt-1 mb-5 text-right">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="col-md-6">
-                <h2>Payment method:</h2>
-                <div class="form-group">
-                    <label for="metodo_pago">Choose a payment method:</label>
-                    <select class="form-control" id="metodo_pago" name="metodo_pago">
-                        <option value="tarjeta_credito">Credit card</option>
-                        <option value="paypal">PayPal</option>
-                        <option value="transferencia">Wire transfer</option>
-                    </select>
+            <form action="" method="get" class="modal-content modal-body border-0 p-0">
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+                    <button type="submit" class="input-group-text bg-success text-light">
+                        <i class="fa fa-fw fa-search text-white"></i>
+                    </button>
                 </div>
-                <!-- Credit Card Number -->
-                <div class="form-group">
-                    <label for="credit_card">Credit Card Number:</label>
-                    <input type="text" class="form-control" id="credit_card" name="credit_card" required>
-                </div>
-                <!-- Expiration Date (MM/YY) -->
-                <div class="form-group">
-                    <label for="expiration_date">Expiration Date (MM/YY):</label>
-                    <input type="text" class="form-control" id="expiration_date" name="expiration_date" required>
-                </div>
-                <!-- CVV (Card Verification Value) -->
-                <div class="form-group">
-                    <label for="cvv">CVV:</label>
-                    <input type="text" class="form-control" id="cvv" name="cvv" required>
-                </div>
-            </div>
-            
+            </form>
         </div>
-        <button onclick="redirectPage()" type="button" class="btn btn-primary">Make an order</button>
-    </form>
-    
-</div>
-<!-- End Content Page -->
+    </div>
 
+
+
+    <section class="bg-success py-5">
+        <div class="container">
+            <div class="row align-items-center py-5">
+                <div class="col-md-8 text-white">
+                    <h1>Successful Purchase</h1>
+                    <p>
+                        We extend our sincerest gratitude for choosing to shop with us at So Active. Your recent purchase of our products is greatly appreciated. We strive to provide top-quality items and a seamless online shopping experience, and your support allows us to continue delivering excellence. 
+                        If you have any questions or feedback regarding your purchase, please do not hesitate to contact our customer service team. Thank you once again for choosing So Active, 
+                        and we look forward to serving you again in the future.
+
+Best regards,
+                    </p>
+
+                </div>
+               
+            </div>
+        </div>
+    </section>
+    <!-- Close Banner -->
 
 
 
@@ -256,13 +233,7 @@
 
     </footer>
     <!-- End Footer -->
-    <script>
-        function redirectPage() {
-            // You can add form validation or other logic here if needed
-            document.getElementById("checkoutForm").action = "compraRealizada.html";
-            document.getElementById("checkoutForm").submit();
-        }
-    </script>
+    <!-- End Footer -->
 
     <!-- Start Script -->
     <script src="assets/js/jquery-1.11.0.min.js"></script>
@@ -270,7 +241,6 @@
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/templatemo.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script src="assets/js/comprar.js"></script>
     <!-- End Script -->
 </body>
 
